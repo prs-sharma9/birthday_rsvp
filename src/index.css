@@ -1,0 +1,268 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Cursive:wght@400..700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  /* color: rgba(255, 255, 255, 0.87); */
+  color: #000000;
+  /* background-color: #FFF2EB; */
+  background-color: whitesmoke;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: #000000;
+  position: relative;
+}
+
+#root {
+  width: 50%;
+  /* background: url("bgImage.webp"); */
+  /* background: #CADCAE; */
+  background-color: rgb(241 234 232);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  margin: 20px auto;
+  padding: 2rem;
+  text-align: center;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+/* #root::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0,0,0,0.25);
+  z-index: 1;
+} */
+
+#content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+p {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+#date-time {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.tb_border {
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  font-weight: 900;
+}
+
+.date-info {
+  font-size: 2rem;
+  font-weight: 900;
+}
+
+#location {
+  margin-top: 40px;
+}
+
+#map_container {
+  border-radius: 15px;
+  overflow: hidden;
+  height: 200px;
+  border: 1px solid black
+}
+
+#map {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+#invite_title {
+  font-size: 3rem;
+  color:#d69c62;
+  font-family: "Edu NSW ACT Cursive", cursive;
+  font-weight: 500;
+}
+
+@media screen and (max-width: 1050px) {
+  #root {
+    width: 100%;
+  }
+
+  body {
+    background-color: rgb(241 234 232);
+  }
+}
+
+@media (max-width: 500px) {
+  div#date-time {
+    width: 100%;
+  }
+
+  .tb_border {
+    font-size: 0.9rem;
+  }
+
+  .date-info {
+    font-size: 1.2rem;
+  }
+
+  input.input-field {
+    width: 90%;
+    float: left;
+    text-align: start;
+  }
+}
+
+.toggle-btn {
+  width: 80px;
+  border: 2px solid whitesmoke;
+  border-radius: 5px;
+  min-height: 2rem;
+  padding: 5px;
+  position: relative;
+  
+  font-weight: 600;
+}
+
+.on::before {
+  position: absolute;
+  content: 'YES';
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 50%;
+  background-color: whitesmoke;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.on::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  bottom: 0;
+  right: 0;
+  background-color: #A8BBA3;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.off::after {
+  content: 'NO';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  bottom: 0;
+  right: 0;
+  background-color: whitesmoke;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.off::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 50%;
+  background-color: #F08787;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+#rsvp-form, #detailed-guest-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.input-field {
+  border: 2px solid transparent;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 1.5rem;
+  margin: 5px 10px
+}
+
+#is-attending-btn-area {
+  margin: 5px 0;
+}
+
+.labels {
+  font-size: 1.5rem;
+  margin: 0 10px;
+  margin-top: 10px;
+  text-decoration: underline;
+}
+
+#guest_count {
+  max-width: 80px;
+  width: fit-content;
+}
+
+#submit-btn {
+  border: 2px solid black;
+  padding: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin: 10px 0;
+}
+
+#submit-btn:hover {
+  background-color: whitesmoke;
+  color: #A8BBA3;
+}
+
+div#theme_image {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+div#theme_image > img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+}
+
+section {
+  width: 100%;
+  margin: 0 auto;
+}
