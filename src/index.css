@@ -72,6 +72,12 @@ div#theme_image > img {
   border-radius: 20px;
 }
 
+#form-section, #location {
+  background-color: #F5EFE6;
+  padding: 20px;
+  border-radius: 20px;
+}
+
 @media screen and (max-width: 1050px) {
   #root {
     width: 100%;
@@ -84,6 +90,11 @@ div#theme_image > img {
   div#theme_image, div#theme_image > img {
     border-top-left-radius: 0;
     border-top-right-radius: 0;
+  }
+
+  #form-section {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
   }
 }
 
@@ -212,8 +223,3 @@ section {
   margin: 0 auto;
 }
 
-#form-section, #location {
-  background-color: #F5EFE6;
-  padding: 20px;
-  border-radius: 20px;
-}
