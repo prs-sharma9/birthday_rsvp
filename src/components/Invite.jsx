@@ -7,7 +7,7 @@ function Invite() {
 
     useEffect(() => {
         const isApple = /iPad|iPhone|iPod/.test(navigator.userAgent)
-        console.log(`IOS check: ${isApple}`)
+        alert(`IOS check: ${isApple}`)
         setIsIOS(isApple);
 
         
