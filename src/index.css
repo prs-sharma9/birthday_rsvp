@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Cursive:wght@400..700&display=swap');
-
 * {
   margin: 0;
   padding: 0;
@@ -12,9 +10,7 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  /* color: rgba(255, 255, 255, 0.87); */
   color: #000000;
-  /* background-color: #FFF2EB; */
   background-color: transparent;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -33,29 +29,15 @@ body {
 
 #root {
   width: 50%;
-  /* background: url("bgImage.webp"); */
-  /* background: #CADCAE; */
   background-color: transparent;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   position: relative;
-  margin: 20px auto;
+  margin: 0 auto;
   text-align: center;
-
   overflow: hidden;
 }
-
-/* #root::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background-color: rgba(0,0,0,0.25);
-  z-index: 1;
-} */
 
 #content {
   position: relative;
@@ -70,47 +52,24 @@ p {
   font-weight: 600;
 }
 
-#date-time {
-  width: 80%;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.tb_border {
-  border-top: 2px solid black;
-  border-bottom: 2px solid black;
-  font-weight: 900;
-}
-
-.date-info {
-  font-size: 2rem;
-  font-weight: 900;
-}
-
 #location {
   margin-top: 40px;
 }
 
-#map_container {
-  border-radius: 15px;
-  overflow: hidden;
-  height: 200px;
-  border: 1px solid black
-}
 
-#map {
+div#theme_image {
   width: 100%;
-  height: 100%;
-  border: none;
+  min-height: 0;
+  overflow: hidden;
+  border-radius: 20px;
 }
 
-#invite_title {
-  font-size: 3rem;
-  color:#d69c62;
-  font-family: "Edu NSW ACT Cursive", cursive;
-  font-weight: 500;
+div#theme_image > img {
+  max-width: 100%;
+  max-height: 100%;
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
 }
 
 @media screen and (max-width: 1050px) {
@@ -119,21 +78,18 @@ p {
   }
 
   body {
-    background-color: rgb(241 234 232);
+    background-color: #c0c0c0;
+  }
+  
+  div#theme_image, div#theme_image > img {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
   }
 }
 
 @media (max-width: 500px) {
   div#date-time {
     width: 100%;
-  }
-
-  .tb_border {
-    font-size: 0.9rem;
-  }
-
-  .date-info {
-    font-size: 1.2rem;
   }
 
   input.input-field {
@@ -249,20 +205,6 @@ p {
 #btn:hover {
   background-color: whitesmoke;
   color: #A8BBA3;
-}
-
-div#theme_image {
-  width: 100%;
-  min-height: 0;
-  overflow: hidden;
-  border-radius: 20px;
-}
-
-div#theme_image > img {
-  max-width: 100%;
-  max-height: 100%;
-  width: 100%;
-  height: auto;
 }
 
 section {
