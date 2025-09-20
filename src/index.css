@@ -235,7 +235,7 @@ p {
   width: fit-content;
 }
 
-#submit-btn {
+#btn {
   border: 2px solid black;
   padding: 5px;
   border-radius: 10px;
@@ -243,7 +243,7 @@ p {
   margin: 10px 0;
 }
 
-#submit-btn:hover {
+#btn:hover {
   background-color: whitesmoke;
   color: #A8BBA3;
 }
@@ -267,7 +267,7 @@ section {
   margin: 0 auto;
 }
 
-#form-section {
+#form-section, #location {
   background-color: #F5EFE6;
   padding: 20px;
   border-radius: 20px;

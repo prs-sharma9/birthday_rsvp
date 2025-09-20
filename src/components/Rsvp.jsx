@@ -96,7 +96,7 @@ function Rsvp() {
                     null
                 }
 
-                <p id="submit-btn" onClick={handleSubmit}>Submit</p>
+                <p id="btn" onClick={handleSubmit}>Submit</p>
             </div>
         </section>
     );
