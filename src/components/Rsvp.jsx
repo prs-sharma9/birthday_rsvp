@@ -73,7 +73,7 @@ function Rsvp() {
                 </div>
 
                 <label className="labels" htmlFor="is-attending-btn-area">Attending</label>
-                <div id="is-attending-btn-area" className="input-field">
+                <div id="is-attending-btn-area" className="">
                     <button 
                     onClick={ handleToggle }
                     type="button"
