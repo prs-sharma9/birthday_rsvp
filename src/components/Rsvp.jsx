@@ -1,12 +1,10 @@
 import { useState } from "react";
-import GuestDetails from "./GuestDetails";
 import { sendEmail } from "../contact";
 
 function Rsvp() {
 
     const [fname, setFname] = useState("");
     const [lname, setLname] = useState("");
-    const [pnum, setPnum] = useState("");
     const [isAttending, setIsAttending] = useState(true);
 
     const [guestCount, setGuestCount] = useState(0);
@@ -23,7 +21,6 @@ function Rsvp() {
         setGuestCount(0);
         setFname("");
         setLname("");
-        setPnum("");
     }
 
     function handleGuestCountUpdate(event) {
@@ -41,7 +38,7 @@ function Rsvp() {
         const guestInfo = {
             name: fname+" "+lname,
             isComing: isAttending?"coming":"not coming",
-            message: "Contact info: "+ pnum + ", No of guest: "+guestCount,
+            message: "No of guest: "+guestCount,
         }
         const result = await sendEmail(guestInfo);
         if(result) {
@@ -50,7 +47,7 @@ function Rsvp() {
     }
 
     return (
-        <section>
+        <section id="form-section">
             <p>{isAttending?"🥳🥳":"🥺🥺"} Party RSVP {isAttending?"🥳🥳":"🥺🥺"}</p>
             <div id="rsvp-form">
                 <label className="labels" htmlFor="name_area">Name</label>
@@ -75,16 +72,6 @@ function Rsvp() {
                     />
                 </div>
 
-                <label className="labels" htmlFor="p_number">Mobile</label>
-                <input 
-                type="text" 
-                className="input-field"
-                id="p_number"
-                placeholder="Mobile Number"
-                value={pnum}
-                onChange={(event) => {setPnum(event.target.value)}}
-                />
-
                 <label className="labels" htmlFor="is-attending-btn-area">Attending</label>
                 <div id="is-attending-btn-area" className="input-field">
                     <button 
@@ -96,10 +83,16 @@ function Rsvp() {
                 
                 {
                     isAttending ? 
-                    <GuestDetails 
-                    guestCount={guestCount} 
-                    updateGuestCount={handleGuestCountUpdate} 
-                    /> : 
+                    <section id="detailed-guest-list">
+                        <label className="labels" htmlFor="guest_count">No. of Guest</label>
+                        <input 
+                        id="guest_count"
+                        type="number"
+                        className="input-field"
+                        value={guestCount}
+                        onChange={handleGuestCountUpdate}
+                        />
+                    </section> : 
                     null
                 }
 

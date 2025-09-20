@@ -6,8 +6,6 @@ function GuestDetails(prop) {
 
     return (
         <section id="detailed-guest-list">
-            <p>Detailed Guest list</p>
-
             <label className="labels" htmlFor="guest_count">No. of Guest</label>
             <input 
             id="guest_count"
