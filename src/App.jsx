@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <div id='content'>
-        <Invite />
+        {/* <Invite /> */}
         <Rsvp />
       </div>
       
