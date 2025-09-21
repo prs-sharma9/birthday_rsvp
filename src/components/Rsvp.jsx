@@ -5,19 +5,16 @@ function Rsvp() {
 
     const [fname, setFname] = useState("");
     const [lname, setLname] = useState("");
-    const [isAttending, setIsAttending] = useState(true);
 
     const [guestCount, setGuestCount] = useState(0);
     
-    function handleToggle() {
-        console.log("handleToggle")
-        setIsAttending(!isAttending)
-        setGuestCount(0);
-    }
+    // function handleToggle() {
+    //     console.log("handleToggle")
+    //     setGuestCount(0);
+    // }
 
     function resetForm() {
         console.log("Reset form");
-        setIsAttending(false);
         setGuestCount(0);
         setFname("");
         setLname("");
@@ -37,7 +34,7 @@ function Rsvp() {
         }
         const guestInfo = {
             name: fname+" "+lname,
-            isComing: isAttending?"coming":"not coming",
+            isComing: "coming",
             message: "No of guest: "+guestCount,
         }
         const result = await sendEmail(guestInfo);
@@ -77,30 +74,24 @@ function Rsvp() {
                     />
                 </div>
 
-                <label className="labels" htmlFor="is-attending-btn-area">Attending</label>
-                <div id="is-attending-btn-area" className="">
+                {/* <label className="labels" htmlFor="is-attending-btn-area">Attending</label> */}
+                {/* <div id="is-attending-btn-area" className="">
                     <button 
                     onClick={ handleToggle }
                     type="button"
                     className={isAttending ? 'toggle-btn on' : 'toggle-btn off'}
                     ></button>
-                </div>
-                
-                {
-                    isAttending ? 
-                    <section id="detailed-guest-list">
-                        <label className="labels" htmlFor="guest_count">No. of Guest</label>
-                        <input 
-                        id="guest_count"
-                        type="number"
-                        className="input-field"
-                        value={guestCount}
-                        onChange={handleGuestCountUpdate}
-                        />
-                    </section> : 
-                    null
-                }
-
+                </div> */}
+                <section id="detailed-guest-list">
+                    <label className="labels" htmlFor="guest_count">No. of Guest</label>
+                    <input 
+                    id="guest_count"
+                    type="number"
+                    className="input-field"
+                    value={guestCount}
+                    onChange={handleGuestCountUpdate}
+                    />
+                </section> 
                 <p id="btn" onClick={handleSubmit}>Submit</p>
             </div>
         </section>
