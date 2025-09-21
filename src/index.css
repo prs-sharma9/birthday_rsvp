@@ -30,7 +30,7 @@ body {
 
 #root {
   width: 50%;
-  height: 100vh;
+  min-height: 100vh;
   background-color: transparent;
   background-repeat: no-repeat;
   background-position: center;
